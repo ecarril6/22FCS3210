@@ -1,3 +1,10 @@
+/*
+ * CS3210 - Principles of Programming Languages - Fall 2022
+ * Instructor: Thyago Mota
+ * Student: Emily CArrillo-Ramirez
+ * Description: Homework 02 - Diamond Problem
+ */
+
 #include <iostream>
 #include <string>
 
