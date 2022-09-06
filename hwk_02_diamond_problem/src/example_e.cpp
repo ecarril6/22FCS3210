@@ -1,7 +1,7 @@
 /*
  * CS3210 - Principles of Programming Languages - Fall 2022
  * Instructor: Thyago Mota
- * Student: Emily CArrillo-Ramirez
+ * Student: Emily Carrillo-Ramirez
  * Description: Homework 02 - Diamond Problem
  */
 
@@ -16,7 +16,7 @@ class Device {
     
     public:
         Device(string manufacturer) {
-            cout << "Class Device constructore called"<< endl;
+            //cout << "Class Device constructore called"<< endl;
             this->manufacturer = manufacturer;
         }
         
@@ -39,7 +39,7 @@ class Printer: virtual public Device {
         
     public: 
         Printer(string manufacturer, string type): Device(manufacturer) {
-            cout << "Class Printer constructor called"<< endl;
+            //cout << "Class Printer constructor called"<< endl;
             this->type = type;
         }
         
@@ -59,7 +59,7 @@ class Scanner: virtual public Device {
         
     public: 
         Scanner(string manufacturer, string dpi): Device(manufacturer) {
-            cout << "Class Scanner constructor called"<< endl;
+            //cout << "Class Scanner constructor called"<< endl;
             this->dpi = dpi;
         }
         
@@ -77,7 +77,7 @@ class MultifunctionPrinter: public Printer, public Scanner {
         
     public: 
         MultifunctionPrinter(string manufacturer, string type, string dpi): Printer(manufacturer, type), Scanner(manufacturer, dpi), Device(manufacturer){
-            cout << "Class MP constructor called"<< endl;
+            //cout << "Class MP constructor called"<< endl;
         }
         
         friend ostream& operator<<(ostream&, const MultifunctionPrinter&);
