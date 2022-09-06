@@ -1,3 +1,10 @@
+'''
+ * CS3210 - Principles of Programming Languages - Fall 2022
+ * Instructor: Thyago Mota
+ * Student: Emily Carrillo-Ramirez
+ * Description: Homework 02 - Diamond Problem
+'''
+
 class Device: 
 
     def __init__(self, manufacturer) -> None:
