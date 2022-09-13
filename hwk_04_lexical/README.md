@@ -52,6 +52,13 @@ finish the implementation
 - recognize all tokens 
 - recognize suymols not part of the grammars alphabet throw an exception 
 
+public_ = lexeme token keyword 
+if not return identifier 
+
+if its not a letter, then its a comma
+
+- create a dictionary for keywords and token values 
+- or if else staements 
 ## Examples
 
 Below are some source codes (with expected outputs) for you to try.  
