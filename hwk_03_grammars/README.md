@@ -29,6 +29,7 @@ P = {
 ```
 does a meal include a book 
 ```
+```
  S → Aux NP VP 
  S → does NP VP 
  S → does Det NOM VP 
@@ -41,6 +42,7 @@ does a meal include a book
  S → does a meal include a NOM
  S → does a meal include a Noun
  S → does a meal include a book
+```
  
 ### b) 
 
