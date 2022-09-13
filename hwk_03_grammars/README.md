@@ -87,7 +87,9 @@ a man read a book
 G = ({S, A, B}, {a, b}, P, S) 
 P = {S → aA, A → bB | ε, B → aA}    
 ```
-
+```
+Regular 
+```
 ### a) 
 
 ```
@@ -134,7 +136,9 @@ No
 G = ({S, A}, {0, 1}, P, S) 
 P = {S → A0, A→A01|ε}           
 ```
- 
+```
+Context Free
+`````
 ### a) 
 
 ```
