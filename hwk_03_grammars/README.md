@@ -137,7 +137,7 @@ G = ({S, A}, {0, 1}, P, S)
 P = {S → A0, A→A01|ε}           
 ```
 ```
-Context Free
+Regular 
 `````
 ### a) 
 
