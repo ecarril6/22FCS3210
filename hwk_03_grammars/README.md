@@ -49,6 +49,7 @@ does a meal include a book
 ```
 this flight book a meal
 ``` 
+```
  S → NP VP
  S → Det NOM VP
  S → this NOM VP
@@ -59,11 +60,12 @@ this flight book a meal
  S → this flight book Det NOM
  S → this flight book a Noun
  S → this flight book a meal
- 
+```
 ### c) 
 
 ```
 a man read a book
+```
 ```
  S → NP VP
  S → Det NOM VP
@@ -75,9 +77,8 @@ a man read a book
  S → a man read Det NOM
  S → a man read a NOM
  S → a man read a Noun
- S → a man read a book
- 
- 
+ S → a man read a book 
+```
 ## Q2
 
 ```
@@ -90,28 +91,32 @@ P = {S → aA, A → bB | ε, B → aA}
 ```
 a
 ```
+```
 S → aA
 S → aε
 S → a
-
+```
 
 ### b) 
 
 ```
 aba
 ```
+```
 S → aA
 S → abB
 S → abaA
 S → abaε
 S → aba
-
+```
 ### c) 
 
 ```
 bb
 ```
+```
 No
+```
 
 ### d) 
 
@@ -145,17 +150,19 @@ No
 ```
 010
 ```
+```
 S → A0
 S → A010
 S → A010
 S → ε010
 S → 010
-
+```
  
 ### d) 
 
 ```
 0101010
+```
 ```
 S → A0
 S → A010
@@ -163,4 +170,4 @@ S → A01010
 S → A0101010
 S → ε0101010
 S → 0101010
- 
+```
