@@ -1,7 +1,7 @@
 /*
  * CS3210 - Principles of Programming Languages - Fall 2022
  * Instructor: Thyago Mota
- * Description: Activity 04 - LexicalAnalyzer (an iterable lexical analyzer)
+ * Description: Activity 05 - LexicalAnalyzer (an iterable lexical analyzer)
  * Student(s) Name(s):
  */
 
@@ -41,7 +41,7 @@ class LexicalAnalyzer(private var source: String) extends Iterable[Lexeme]{
   // reads the input until a non-blank character is found, updating the input
   def readBlanks: Unit = {
     while (!eof && hasBlank)
-        nextChar
+      nextChar
   }
 
   // checks if input has a letter ahead
@@ -82,15 +82,13 @@ class LexicalAnalyzer(private var source: String) extends Iterable[Lexeme]{
           return new Lexeme("eof", Token.EOF)
 
         if (hasLetter) {
-            var str = getChar + ""
-            nextChar
-          while ((hasLetter || hasDigit) && !eof) {
+          var str = ""
+          while ((hasDigit || hasLetter) && !eof) {
             str += getChar
             nextChar
           }
           return new Lexeme(str, Token.IDENTIFIER)
         }
-        // TODOd #1: identify a literal value
         else if (hasDigit) {
           var str = ""
           while (hasDigit && !eof) {
@@ -104,23 +102,30 @@ class LexicalAnalyzer(private var source: String) extends Iterable[Lexeme]{
           nextChar
           return new Lexeme(str, Token.ADDITION)
         }
-        // TODOd #2: identify a subtraction operator
         else if (getChar == '-') {
           val str = getChar + ""
           nextChar
           return new Lexeme(str, Token.SUBTRACTION)
         }
-        // TODOd #3: identify a multiplication operator
         else if (getChar == '*') {
           val str = getChar + ""
           nextChar
           return new Lexeme(str, Token.MULTIPLICATION)
         }
-        // TODOd #4: identify a division operator
         else if (getChar == '/') {
           val str = getChar + ""
           nextChar
           return new Lexeme(str, Token.DIVISION)
+        }
+        else if (getChar == '(') {
+          val str = getChar + ""
+          nextChar
+          return new Lexeme(str, Token.OPEN_PAR)
+        }
+        else if (getChar == ')') {
+          val str = getChar + ""
+          nextChar
+          return new Lexeme(str, Token.CLOSE_PAR)
         }
 
         // throw an exception if an unrecognizable symbol is found
@@ -148,8 +153,9 @@ object LexicalAnalyzer {
 
     // iterates over the lexical analyzer, printing the lexemes found
     val lex = new LexicalAnalyzer(args(0))
-    for (lexeme <- lex)
-      println(lexeme)
+    val it = lex.iterator
+    while (it.hasNext)
+      println(it.next())
 
   } // end main method
 }
