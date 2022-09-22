@@ -10,6 +10,9 @@ Y -> Yp | q
 ```
 ```
 X -> XYz | Xw | w
+
+X -> xX'
+X' -> YzX' | wX' | epsilon
 ```
 
 ```
