@@ -38,3 +38,13 @@ C -> A | c
 D -> d           
 ```
 
+A -> Bxy | x
+A -> CDxy | x
+A -> CDxy | x
+A -> ADxy | x
+A -> Adxy | x
+A -> Adxy | x
+
+A --> x | A'
+A' --> dxyA'| epsilon
+
