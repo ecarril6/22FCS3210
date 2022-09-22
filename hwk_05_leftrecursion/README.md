@@ -47,14 +47,18 @@ D -> d
 ```
 
 ```
+
+B -> CD 
+B -> Ad | cd
+
+
+
 A -> Bxy | x
-A -> CDxy | x
-A -> ADxy | CDxy | x
-A -> ADxy | CDxy | x
-A -> Adxy | Adxy | x
+A -> Adxy | cdxy| x
 
-A ->  x | A'
-A' -> dxyA'| epsilon
+A -> cdxy | x | A'
+A' -> dxyA' | epsilon
 
-D -> d 
+
+
 ```
