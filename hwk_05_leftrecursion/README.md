@@ -11,7 +11,7 @@ Y -> Yp | q
 ```
 X -> XYz | Xw | w
 
-X -> xX'
+X -> wX'
 X' -> YzX' | wX' | epsilon
 ```
 
@@ -50,9 +50,11 @@ D -> d
 A -> Bxy | x
 A -> CDxy | x
 A -> ADxy | CDxy | x
-A -> Adxy | Cdxy | x
+A -> ADxy | CDxy | x
 A -> Adxy | Adxy | x
 
-A -> xy | x | A'
-A' -> dA'| epsilon
+A ->  x | A'
+A' -> dxyA'| epsilon
+
+D -> d 
 ```
