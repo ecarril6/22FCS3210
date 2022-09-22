@@ -8,12 +8,15 @@ Eliminate any left-recursive productions (including indirect ones). When you are
 X -> XYz | Xw | w
 Y -> Yp | q
 ```
+```
 X -> XYz | Xw | w
+```
 
-
+```
 Y -> Yp | q
 Y -> q | Y'
 Y' -> pY' | epsilon
+```
 
 ## Q2
 
@@ -21,14 +24,15 @@ Y' -> pY' | epsilon
 S -> aA | Sd
 A -> b
 ```
-
+```
 S -> aA | Sd
 
 S -> aA | S'
 S' -> dS' | epsilon
-
-
+```
+```
 A -> b
+```
 
 ## Q3
 
@@ -39,6 +43,7 @@ C -> A | c
 D -> d           
 ```
 
+```
 A -> Bxy | x
 A -> CDxy | x
 A -> ADxy | CDxy | x
@@ -47,4 +52,4 @@ A -> Adxy | Adxy | x
 
 A -> xy | x | A'
 A' -> dA'| epsilon
-
+```
