@@ -63,6 +63,7 @@ function sub3() {
 Given the following calling sequences and assuming that dynamic scoping is used, what variables are visible during execution of the last subprogram activated? Include with each visible variable the name of the unit where it is declared.  
 
 a) main calls sub1; sub1 calls sub2; sub2 calls sub3.  
+'''
 main: 
 x, y, z
     sub 1:
@@ -75,7 +76,7 @@ x, y, z
       a ,x, w
       : a sub 3, x sub 3, w sub 3
       
-      
+'''     
 b) main calls sub1; sub1 calls sub3.  
 
 a: sub 3
