@@ -101,7 +101,7 @@ c) main calls sub2; sub2 calls sub3; sub3 calls sub1.
 main: 
 x, y, z
  sub 2: 
- a , b, c 
+ a , b, z
   sub 3: 
   a, x, w
     sub 1: 
@@ -110,10 +110,9 @@ x, y, z
 
 a: sub 1
 b: sub 2
-c: sub 2
 x: sub 3
 y: sub 1
-z: sub 1
+Z: sub 1
 w: sub 3
 
 ```
@@ -126,7 +125,7 @@ y: sub 1
 z: sub 1
 w: sub 3
 b: not visible 
-c: not visible 
+
 ```
 e) main calls sub1; sub1 calls sub3; sub3 calls sub2.  
 
@@ -134,10 +133,10 @@ e) main calls sub1; sub1 calls sub3; sub3 calls sub2.
 a: sub 2
 x: sub 3
 y: sub 1
-z: sub 1
+z: sub 2
 w: sub 3
 b: sub 2
-c: sub 2
+
 ```
 
  
@@ -150,7 +149,7 @@ y: sub 1
 z: sub 1
 w: sub 3
 b: sub 2
-c: sub 2
+
 ```
 
 # Question 3
