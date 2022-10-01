@@ -24,7 +24,7 @@ a) What value of x is displayed in function **sub1** IF **static-scoping** rules
 
 b) What value of x is displayed in function **sub1** IF **dynamic-scoping** rules are applied?  
 
-'''
+```
 main:
 x = 5
 sub 2: 
@@ -35,7 +35,7 @@ sub 2:
         //dynamic scope x = 10 
         // dynamic look locally the who called 
  
-'''
+```
 # Question 2
 
 Consider the following program, written in JavaScript-like syntax:  
@@ -63,7 +63,7 @@ function sub3() {
 Given the following calling sequences and assuming that dynamic scoping is used, what variables are visible during execution of the last subprogram activated? Include with each visible variable the name of the unit where it is declared.  
 
 a) main calls sub1; sub1 calls sub2; sub2 calls sub3.  
-'''
+```
 main: 
 x, y, z
     sub 1:
@@ -83,10 +83,10 @@ y: sub 1
 z: sub 1
 w: sub 3
       
-'''  
+``` 
 b) main calls sub1; sub1 calls sub3.  
 
-''' 
+``` 
 a: sub 3
 b: not visible 
 x: sub 3 
@@ -94,10 +94,10 @@ y: sub 1
 z: sub 1
 w: sub 3
 
-''' 
+```
 c) main calls sub2; sub2 calls sub3; sub3 calls sub1.  
 
-''' 
+```
 main: 
 x, y, z
  sub 2: 
@@ -116,10 +116,10 @@ y: sub 1
 z: sub 1
 w: sub 3
 
-''' 
+```
 d) main calls sub3; sub3 calls sub1.  
 
-''' 
+```
 a: sub 1 
 x: sub 3
 y: sub 1
@@ -127,11 +127,10 @@ z: sub 1
 w: sub 3
 b: not visible 
 c: not visible 
-''' 
-
+```
 e) main calls sub1; sub1 calls sub3; sub3 calls sub2.  
 
-''' 
+```
 a: sub 2
 x: sub 3
 y: sub 1
@@ -139,12 +138,12 @@ z: sub 1
 w: sub 3
 b: sub 2
 c: sub 2
-''' 
+```
 
  
 f) main calls sub3; sub3 calls sub2; sub2 calls sub1.  
 
-''' 
+```
 a: sub 1
 x: sub 3
 y: sub 1
@@ -152,7 +151,7 @@ z: sub 1
 w: sub 3
 b: sub 2
 c: sub 2
-'''
+```
 
 # Question 3
 
