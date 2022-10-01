@@ -26,17 +26,23 @@ Given the following calling sequences and assuming that dynamic scoping is used,
 
 Note that those items match items d, e, and f (from activity 07, question 2). Help me grade faster: fill the parentheses with sub1, sub2, sub3, or "not visible". Don't change the order of the variables!
 
+```
 d) main calls sub3; sub3 calls sub1.  
 
-a (), b (), x (), y (), z (), w () 
+a (sub1), b (not visible), x (sub3), y (sub1), z (sub1), w (sub3) 
 
+```
+```
 e) main calls sub1; sub1 calls sub3; sub3 calls sub2. 
 
-a (), b (), x (), y (), z (), w () 
- 
+a (sub 2), b (sub2), x (sub3), y (sub1), z (sub2), w (sub3) 
+```
+
+```
 f) main calls sub3; sub3 calls sub2; sub2 calls sub1.  
 
-a (), b (), x (), y (), z (), w () 
+a (sub1), b (sub2), x (sub3), y (sub1), z (sub1), w (sub3) 
+```
 
 # Submission
 
