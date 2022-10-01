@@ -59,23 +59,27 @@ class BST:
     
     # TODOd #1: return an iterator for BST; hint: use _in_order to build a list with the (node) elements; then return "self"
     def __iter__(self):
-        self.stack = []
-        self._in_order(node = root)
-        #return None
+        return iter(self._in_order())
 
     # TODOd #2: return the label of the first element from the list that you built in __iter__, updating the list before returning; hint: don't worry if the list is empty (the exception that is going to be thrown is used to notify that there are no more elements to return)
     def __next__(self) -> int:
-        node.self.stack.pop()
-        if node.right:
-            self._in_order(node = node.right)
-        return node.val
-
-        #return None
+        if self.label >= len(self._in_order):
+            raise StopIteration
+        else: 
+            self.label += 1
+            return self._in_order[self.label -  1]
 
 # the code below builds and prints a tree using the given labels
 tree = BST(["b", "a", "d", "c", "e"])
 print("Tree:")
 print(tree)
 
-# TODO #3: use the iterator that you created to show the labels of the elements of the tree
+# TODOd #3: use the iterator that you created to show the labels of the elements of the tree
+#create iteratot 
+iterator = iter(tree)
+try: 
+    while True:
+        print(next(iterator), " ", end = '')
+except StopIteration:
+    print("All traversed")
 
