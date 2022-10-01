@@ -76,17 +76,28 @@ x, y, z
       a ,x, w
       : a sub 3, x sub 3, w sub 3
       
-'''     
+a: sub 3
+b: sub 2
+x: sub 3 
+y: sub 1
+z: sub 1
+w: sub 3
+      
+'''  
 b) main calls sub1; sub1 calls sub3.  
 
+''' 
 a: sub 3
 b: not visible 
 x: sub 3 
 y: sub 1
 z: sub 1
 w: sub 3
- 
+
+''' 
 c) main calls sub2; sub2 calls sub3; sub3 calls sub1.  
+
+''' 
 main: 
 x, y, z
  sub 2: 
@@ -95,19 +106,53 @@ x, y, z
   a, x, w
     sub 1: 
     a, y , z 
+    
 
 a: sub 1
 b: sub 2
+c: sub 2
 x: sub 3
 y: sub 1
 z: sub 1
 w: sub 3
 
+''' 
 d) main calls sub3; sub3 calls sub1.  
 
+''' 
+a: sub 1 
+x: sub 3
+y: sub 1
+z: sub 1
+w: sub 3
+b: not visible 
+c: not visible 
+''' 
+
 e) main calls sub1; sub1 calls sub3; sub3 calls sub2.  
+
+''' 
+a: sub 2
+x: sub 3
+y: sub 1
+z: sub 1
+w: sub 3
+b: sub 2
+c: sub 2
+''' 
+
  
 f) main calls sub3; sub3 calls sub2; sub2 calls sub1.  
+
+''' 
+a: sub 1
+x: sub 3
+y: sub 1
+z: sub 1
+w: sub 3
+b: sub 2
+c: sub 2
+'''
 
 # Question 3
 
