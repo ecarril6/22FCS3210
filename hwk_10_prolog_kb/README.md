@@ -4,6 +4,11 @@ Build a knowledge base (KB) using Prolog to encode the following facts about the
 
 ```
 Mt. Everest is located in Asia and it has 29,029 feet; 
+mountain(mt.everest) 
+Regiaon (Asia) 
+asia( mt.everest) 
+mt.everest(2029) 
+
 The Aconcagua is located in South America and it has 22,841 feet;  
 Mt. McKinley is located in North America and it has 20,312 feet;  
 The Kilimanjaro is located in Africa and it has 19,340 feet;  
@@ -11,7 +16,9 @@ Mt. Elbrus is located in Europe and it has 18,510 feet;
 Mt. Vinson is located in Antarctica and it has 16,050 feet;  
 The Puncak Jaya is located in the Australia (continent) and it has 16,023 feet;  
 John, Kelly, Maria, and Derek are certified climbers; 
+climber( John, Kelly, Maria, Derek) 
 Thyago is NOT a certified climber;  
+Not(climber, Thyago) 
 John would climb a mountain if he is currently certified and the mountain is located in North America; 
 Kelly would climb a mountain if she is currently certified and the mountain has at least 20K feet; 
 Maria would climb any mountain, as long as she is currently certified; 
@@ -23,8 +30,11 @@ To test you KB, you should write Prolog queries to answer the following question
 
 ```
 Is Mt. Everest one of the highest peaks in the world? true 
+
 Is the Kilimanjaro located in Africa? true 
 Is Mt. Elbrus more than 18K feet? true 
+"IS_True rules (' Is Mt Elbrus more than 18k ?') :- 
+greater than operator 
 Is Thyago a certified climber? false 
 Is John a certified climber? true 
 All certified climbers? John, Kelly, Maria, and Derek 
