@@ -10,7 +10,7 @@ Using the knowledge based built, write a (recursive) predicate path/2 that tells
 * which other points can you get to when starting at point 1? 
 * which points can be reached from point 13?  
 
-'''
+
 connected(1,2). 
 connected(3,4). 
 connected(5,6). 
@@ -36,4 +36,3 @@ path(X,Y) :- connected(X, Z), path(Z, Y).
     
 
 
-'''
