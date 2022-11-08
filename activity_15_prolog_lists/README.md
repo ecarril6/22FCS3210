@@ -23,7 +23,19 @@ twice([1, 2, 1, 1], X).
 ```
 X = [1, 1, 2, 2, 1, 1, 1, 1] 
 ```
+
+```
+Basecase empty list 
+twice([]) 
+```
  
+```
+Basecase empty list 
+twice([In list ], [out list ]) 
+
+twice([ X | T1  ], [ X, X | T2 ]) :- twice(T1 | T2) 
+-intil reach the base case 
+```
 # Example 2
 
 Suppose we are given a knowledge based with the following facts (pten translates number words from Portuguese to English):  
