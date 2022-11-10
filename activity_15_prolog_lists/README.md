@@ -23,19 +23,7 @@ twice([1, 2, 1, 1], X).
 ```
 X = [1, 1, 2, 2, 1, 1, 1, 1] 
 ```
-
-```
-Basecase empty list 
-twice([]) 
-```
  
-```
-Basecase empty list 
-twice([In list ], [out list ]) 
-
-twice([ X | T1  ], [ X, X | T2 ]) :- twice(T1 | T2) 
--intil reach the base case 
-```
 # Example 2
 
 Suppose we are given a knowledge based with the following facts (pten translates number words from Portuguese to English):  
@@ -58,3 +46,16 @@ Write a predicate **listpten** which translates a list of Portuguese number word
 ```
 listpen([tres, cinco, sete], [three, five, seven]).  
 ```
+
+# Example 3
+
+Write a predicate **factorial** that can be used to compute the factorial of a given number. Hint: fill in the blanks appropriately. 
+
+```
+factorial(0, ___).
+factorial(X, Y) :- X > 0, X_dec is ___, factorial(___, Z), Y is ___.
+```
+
+# Example 4
+
+Write a predicate **subs(X, Y, L1, L2)** having L2 as the result of substituting Y for all occurences of X in L1. For example, **subs(a, x, [a, b, a, c], [x, b, x, c])** is **true** whereas **subs(a, x, [a, b, a, c], [a, b, x, c])** is **false**. 
