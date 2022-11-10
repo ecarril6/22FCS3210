@@ -35,6 +35,8 @@ peak(puncakjaya, 16023).
 higher(X,Y) :-
     peak(X,H),
     (H>Y).
+    
+question('Is Mt. Everest one of the highest peaks in the world?'):- true.
 
 % Climbers and status of certification
 
@@ -80,7 +82,7 @@ climb(thyago, _) :-
 % Queries
 
 %Is Mt. Everest one of the highest peaks in the world? true 
-%higher(mteverest, 29000).
+%question('Is Mt. Everest one of the highest peaks in the world?').
 
 %Is the Kilimanjaro located in Africa? true 
 %location(kilimanjaro, africa).
