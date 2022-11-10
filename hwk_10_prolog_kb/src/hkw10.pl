@@ -3,16 +3,15 @@
 % Description: Homework 10 - A KB in Prolog with queries
 % Student Name: Emily Carrillo
 
-%Mountain
 
 %% Name of mountain 
-name(mteverest).
-name(aconcagua).
-name(mtmckinley).
-name(kilimanjaro).
-name(mtelbrus).
-name(mtvinson).
-name(puncakjaya).
+mountain(mteverest).
+mountain(aconcagua).
+mountain(mtmckinley).
+mountain(kilimanjaro).
+mountain(mtelbrus).
+mountain(mtvinson).
+mountain(puncakjaya).
 
 %% mountain locations
 location(mteverest, asia).
@@ -31,15 +30,11 @@ peak(kilimanjaro, 19340).
 peak(mtelbrus, 18510).
 peak(mtvinson, 16050).
 peak(puncakjaya, 16023).
-%% mountain 
+
 
 higher(X,Y) :-
     peak(X,H),
     (H>Y).
-
-mountain( X, Y, Z) :- 
-  location(X, Y),
-  peak(X, Z). 
 
 % Climbers and status of certification
 
@@ -55,37 +50,40 @@ certified(maria).
 certified(derek).
 not(certified(thyago)).
 
-climb(john, X) :- 
-    mountain(X, Y, _), 
-    Y =northamerica, 
-    certified(john).
+climb(john,X) :-
+    mountain(X),
+    certified(john),
+    location(X,northamerica).
 
-climb(kelly,X) :- 
-    mountain(X, _,  Z), 
-    Z >=20000, 
-    certified(kelly).
+climb(kelly,X) :-
+    mountain(X),
+    certified(kelly),
+    peak(X,Y),
+    Y >= 20000.
 
-climb(maria,X) :- 
-    mountain(X, _ , _), 
+climb(maria,X) :-
+    mountain(X),
     certified(maria).
 
-climb(derek,X) :- 
-    (location(X,europe);location(X,africa);location(X,australia)), 
-    peak(X,Y), 
-    Y =< 19000,
-    certified(derek).
+climb(derek,X) :-
+    mountain(X),
+    certified(john),
+    (location(X,europe);
+    location(X,africa);
+    location(X,australia)),
+    peak(X,Y),
+    Y =< 19000.
 
 climb(thyago, _) :- 
     false.
 
-% Queries to be made 
+% Queries
 
 %Is Mt. Everest one of the highest peaks in the world? true 
-%
+%higher(mteverest, 29000).
 
 %Is the Kilimanjaro located in Africa? true 
 %location(kilimanjaro, africa).
-
 
 %Is Mt. Elbrus more than 18K feet? true 
 %higher(mtelbrus, 18000).
