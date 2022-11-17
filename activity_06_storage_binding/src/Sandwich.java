@@ -9,11 +9,26 @@ A sandwich is defined by a name, number of calories (integer is fine), and price
  */
 public class Sandwich {
 
+    //instance variables - heap dynamic -(location of variables cannot be determined in run time) everytime you run the program the location can be different
+    //name: heap-dynamic
     private String name;
+    //calories: heap-dynamic
     private int calories;
+    //price:heap-dynamic
     private double price;
+    //HEALTHY_CALORIES: static
+    //before the program runs the location can be determined 
     private static final int HEALTHY_CALORIES = 250;
-
+    
+    
+    
+    //name(parameter): stack dynamic
+    //calories (parameter): stack dynamic
+    //price (parameter): stack dynamic
+    
+    //cant be determined before the program starts running 
+    
+    // Sandwich is a constructor function and in order to call function they are local variables within the function and variables will be created once a sandwhuch is created 
     public Sandwich(String name, int calories, double price) {
         this.name = name;
         if (calories < 0)
@@ -28,6 +43,9 @@ public class Sandwich {
 
     @Override
     public String toString() {
+        //literal string is an object 
+        // object rescides in a heap 
+        // (implicit) heap-dynamic 
         return "Sandwich{" +
                 "name='" + name + '\'' +
                 ", calories=" + calories +
@@ -38,10 +56,14 @@ public class Sandwich {
     public boolean isHealthy() {
         return calories < HEALTHY_CALORIES;
     }
-
+//args: stack-dynamic
+    // teh args variable the value is an address but the variable will be in the stack frame
     public static void main(String[] args) {
+        // s1: stack-dynamic because its a local variabble 
+        // new Sandwich("Big Mac", 450, 5.5) : (explict) heap dynamic
         Sandwich s1 = new Sandwich("Big Mac", 450, 5.5);
         System.out.println(s1);
         System.out.println("Is healthy? " + s1.isHealthy());
     }
 }
+

@@ -2,7 +2,7 @@
 CS3210 - Principles of Programming Languages - Fall 2022
 Instructor: Thyago Mota
 Description: Homework 06 - An iterator for a BST (Binary Search Tree)
-Student Name:
+Student Name: Emily Carrillo
 '''
 
 class BST: 
@@ -49,11 +49,23 @@ class BST:
     # TODO #1: return one element at a time from the BST's given node and respecting in-order tree traversal
     # hint: do it recursively; the base-case is when node is None
     def in_order(node): 
-        pass
+        elements= []
+        if node.left: # visit left tereee first
+            elements += node.left.in_order()
+
+        elements.append(node.label) # visit base element
+
+        if node.right: # visit right nodes
+            elements += node.right.in_order()
+
+
+        return elements
 
 # the code below builds and prints a tree using the given labels
 tree = BST(["b", "a", "d", "c", "e"])
 print("Tree:")
 print(tree)
 
+
 # TODO #2: use the generator that you created to show the labels of the elements of the tree
+print(tree.in_order())

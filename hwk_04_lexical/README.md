@@ -23,23 +23,42 @@ type       = identifier
 type_list  = type { ´,´ type }
 ```
 
-From the gramnar specification we can infer the lexical unit types (tokens) of the grammar.
+From the grammar specification we can infer the lexical unit types (tokens) of the grammar.
 
 1. class keyword
-2. identifier keyword
+2. identifier 
 3. public keyword
 4. abstract keyword
 5. final keyword
 6. extends keyword
 7. implements keyword
-8. block opening
-9. block closing
-10. comma
+8. block opening ( { )
+9. block closing ( } )
+10. comma ( , ) 
 
 Your goal is to write a lexical analyzer for the language described by the grammar.  Get the code template (in Scala) under src.  The output of your lexical analyzer should be a list of pairs containing a lexical unit followed by its token number, in the order of their appearance.  
 
 You just need to submit LexicalAnalyzer.scala this time!
+## Notes from Class 
 
+Do not create digits or letters as indivdual tokens 
+
+Lexeme - nothing to do already implemented 
+
+Lexical Analyzer - 
+getChar doesnt consume from the input if you want to sonsume the inout make a call to nextChar 
+
+finish the implementation 
+- recognize all tokens 
+- recognize suymols not part of the grammars alphabet throw an exception 
+
+public_ = lexeme token keyword 
+if not return identifier 
+
+if its not a letter, then its a comma
+
+- create a dictionary for keywords and token values 
+- or if else staements 
 ## Examples
 
 Below are some source codes (with expected outputs) for you to try.  
