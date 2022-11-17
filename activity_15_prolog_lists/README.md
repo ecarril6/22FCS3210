@@ -119,6 +119,14 @@ Y is
 
 Write a predicate **subs(X, Y, L1, L2)** having L2 as the result of substituting Y for all occurences of X in L1. For example, **subs(a, x, [a, b, a, c], [x, b, x, c])** is **true** whereas **subs(a, x, [a, b, a, c], [a, b, x, c])** is **false**. 
 
+Solution: 
+
+```
+subs(_, _, [], []).
+subs(X, Y, [X | T1], [Y | T2]) :- subs(X, Y, T1, T2).
+subs(X, Y, [Z | T1], [Z | T2]) :- subs(X, Y, T1, T2).
+```
+
 swapping a's for x's 
 (4 parameters) replace 1st parameter by the seconbd 
  **subs(a, x, [a, b, a, c], [x, b, x, c])** is **true**
