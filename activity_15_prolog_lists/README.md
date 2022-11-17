@@ -28,6 +28,13 @@ twice([1, 2, 1, 1], X).
 ```
 X = [1, 1, 2, 2, 1, 1, 1, 1] 
 ```
+
+Solution: 
+
+```
+twice([], []).
+twice([X | T1], [X, X | T2]) :- twice(T1, T2).
+```
  
 # Example 2
 
@@ -59,6 +66,36 @@ listpen([tres, cinco, sete], X ).
 
 Write a predicate **factorial** that can be used to compute the factorial of a given number. Hint: fill in the blanks appropriately. 
 
+
+```
+factorial(0, ___).
+factorial(X, Y) :- X > 0, X_dec is ___, factorial(___, Z), Y is ___.
+```
+
+Solution: 
+
+```
+factorial(0,1).
+factorial(X, Y) :- X > 0, X_dec is X - 1, factorial(X_dec, Z), Y is X * Z.
+```
+
+# Example 4
+
+Write a predicate **subs(X, Y, L1, L2)** having L2 as the result of substituting Y for all occurences of X in L1. For example, **subs(a, x, [a, b, a, c], [x, b, x, c])** is **true** whereas **subs(a, x, [a, b, a, c], [a, b, x, c])** is **false**. 
+
+Solution: 
+
+```
+subs(_, _, [], []).
+subs(X, Y, [X | T1], [Y | T2]) :- subs(X, Y, T1, T2).
+subs(X, Y, [Z | T1], [Z | T2]) :- subs(X, Y, T1, T2).
+```
+
+# Example 5
+
+Write a predicate **len** that takes a list and a number representing the number of elements in the list. 
+
+=======
 factorial([],[]).
 factorial(X, Y) :- X!.
 factorial(
@@ -100,3 +137,4 @@ swapping a's for x's
   subs( X , Y , [ Z | T1], [ Z| T2] :- subs( X, Y , T1, T2). 
   
   
+
