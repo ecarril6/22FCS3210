@@ -23,36 +23,82 @@ P = {
     Aux → does
 } 
 ```
- 
+```
+ Context Free Grammar
+```
 ### a)
 
 ```
 does a meal include a book 
 ```
-
+```
+ S → Aux NP VP 
+ S → does NP VP 
+ S → does Det NOM VP 
+ S → does a NOM VP
+ S → does a Noun VP
+ S → does a meal VP
+ S → does a meal Verb NP
+ S → does a meal include NP
+ S → does a meal include Det NOM
+ S → does a meal include a NOM
+ S → does a meal include a Noun
+ S → does a meal include a book
+```
+ 
 ### b) 
 
 ```
 this flight book a meal
 ``` 
-
+```
+ S → NP VP
+ S → Det NOM VP
+ S → this NOM VP
+ S → this Noun VP
+ S → this flight VP
+ S → this flight Verb NP
+ S → this flight book NP
+ S → this flight book Det NOM
+ S → this flight book a Noun
+ S → this flight book a meal
+```
 ### c) 
 
 ```
 a man read a book
 ```
-
+```
+ S → NP VP
+ S → Det NOM VP
+ S → a NOM VP
+ S → a Noun VP
+ S → a man VP
+ S → a man Verb NP
+ S → a man read NP
+ S → a man read Det NOM
+ S → a man read a NOM
+ S → a man read a Noun
+ S → a man read a book 
+```
 ## Q2
 
 ```
 G = ({S, A, B}, {a, b}, P, S) 
 P = {S → aA, A → bB | ε, B → aA}    
 ```
-
+```
+Regular 
+```
 ### a) 
 
 ```
 a
+```
+```
+S → aA
+S → aε
+S → a
 ```
 
 ### b) 
@@ -60,11 +106,20 @@ a
 ```
 aba
 ```
-
+```
+S → aA
+S → abB
+S → abaA
+S → abaε
+S → aba
+```
 ### c) 
 
 ```
 bb
+```
+```
+No
 ```
 
 ### d) 
@@ -72,18 +127,25 @@ bb
 ```
 abb
 ```
-
+```
+No
+```
 ## Q3
 
 ```
 G = ({S, A}, {0, 1}, P, S) 
 P = {S → A0, A→A01|ε}           
 ```
- 
+```
+Regular 
+`````
 ### a) 
 
 ```
 00
+```
+```
+No
 ```
  
 ### b) 
@@ -91,11 +153,20 @@ P = {S → A0, A→A01|ε}
 ```
 ε
 ```
-
+```
+No
+```
 ### c)
 
 ```
 010
+```
+```
+S → A0
+S → A010
+S → A010
+S → ε010
+S → 010
 ```
  
 ### d) 
@@ -103,4 +174,11 @@ P = {S → A0, A→A01|ε}
 ```
 0101010
 ```
- 
+```
+S → A0
+S → A010
+S → A01010
+S → A0101010
+S → ε0101010
+S → 0101010
+```
