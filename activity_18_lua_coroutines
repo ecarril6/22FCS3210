@@ -231,6 +231,15 @@ bst = {
 
 -- TODO #1: test the coroutine manually
 
+--curr: in suspended mode
+cr = coroutine.create(in_order)
+
+-- cr resume and pass bst 
+print(coroutine.resume(cr,bst))
+print(coroutine.resume(cr,bst))
+print(coroutine.resume(cr,bst)) 
+
+output: 1,5,7
 -- TODO #3: test your iterator 
 
 ```
