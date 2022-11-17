@@ -3,27 +3,28 @@
 % Description: Homework 11 - Prolog Lists
 % Student Name: Emily Carrillo 
 
-
+% Sum Predicate
 
 sum([],X):- X is 0.
 sum([H|T],X):- sum(T, X1), X is X1 + H.
 
-Tests: 
 
-sum([], 0). 
+%Tests: 
+%sum([], 0). 
+%output: true
+%sum([1, 2, 5], 8). 
+%output: true
+%sum([1, 2, 5], X). 
+%output: X = 8 
 
-sum([1, 2, 5], 8). 
+% Max Predicate
 
-sum([1, 2, 5], X). 
+max([X],X).
+max([H|T],Z) :- max(T,Ts),(H>=Ts,Z=H,!;Z=Ts,!).
 
-max([X,Y|[]],Z):- X > Y, !, Z is X.
-max([X,Y|[]],Z):- Z is Y.
+%Tests: 
+%max([1, 2, 5], 5). 
+%output: true
 
-max([X|Y],Z):- max(Y,Z2), X > Z2, Z is X, !. 
-max([X|Y],Z):- max(Y,Z2), Z is Z2, !. 
-
-Tests: 
-
-max([1, 2, 5], 5). 
-
-max([1, 2, 5], X). 
+%max([1, 2, 5], X). 
+%output: X=5
