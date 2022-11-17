@@ -278,7 +278,33 @@ a
 a!
 !
 ```
+```
+-- Write an iterator that returns all substrings of a given string. 
+function all_subs(str)
+    local i = 1
+    local j = 0
+    return function() 
+        if i > string.len(str) then
+            return nil
+        end
+        if j <= string.len(str) then
+            j = j + 1
+            if j > string.len(str) then
+                i = i + 1 
+                if i > string.len(str) then
+                    return nil
+                end
+                j = i
+            end
+        end
+        return string.sub(str, i, j)
+    end
+end
 
+for s in all_subs("Hello Lua!") do
+    print(s)
+end
+```
 ### Exercise 2
 
 Use Lua's table to implement a singly-linked list, as shown in the example below: 
@@ -292,9 +318,46 @@ list = { next = list, value = 3}
 
 Write an iterator for the linked list. 
 
+--final exam: this is the regular iterator because current is saving memory 
 ```
 function it(list)
-    --- finish
+    local current = list
+    return function()
+        if current then
+            local value = current.value 
+            current = current.next 
+            return value 
+        end
+    end
+end
+
+list = nil
+list = { next = list, value = 5}
+list = { next = list, value = 8}
+list = { next = list, value = 3}
+for el in it(list) do 
+    print(el)
+end
+```
+
+--final exam: this is an example of stateless iterator 
+```
+function it(list)
+    return function()
+        if current then
+            local value = list.value 
+            list = list.next 
+            return value 
+        end
+    end
+end
+
+list = nil
+list = { next = list, value = 5}
+list = { next = list, value = 8}
+list = { next = list, value = 3}
+for el in it(list) do 
+    print(el)
 end
 ```
 
