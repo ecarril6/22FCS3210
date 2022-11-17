@@ -114,16 +114,24 @@ coroutine.resume(cns, prd)
 
 ```
 function producer()
+    
     while true do
-        coroutine.yield(
-            io.read()
-        )    
+        local value =io.read()
+        if value == " " then
+            break
+        end
+        coroutine.yield(value) 
     end
 end
 
 function consumer()
+    
     while true do
         local status, value = coroutine.resume(prd)
+        --if you get a null for value break else print
+        if not value then 
+            break 
+        end
         print(value)
     end
 end
@@ -141,16 +149,20 @@ Coroutines can be used to write iterators, as shown in the example below.
 function my_iterator(collection)
     local cr = coroutine.create(
         function ()
+            --loop from 1 to collection size 
             for i = 1, #collection do
                 coroutine.yield(collection[i])
             end
         end
     )
     return function() 
+        
         local status, el = coroutine.resume(cr)
+        --if status is true then return the element 
         if status then
             return el 
         end
+        --else return nil signals that iteration is over 
         return nil
     end
 end
@@ -160,15 +172,22 @@ for el in my_iterator(collection) do
     print(el)
 end
 ```
+--return: 8,2,1,9
+--helps with iterating non linear data structures
 
 # Exercise
 
 ```
+--implementation of bst
+--ability to return one at a time 
+
 function in_order(current) 
     if current then
+    
         if current.left then
             in_order(current.left)
         end
+        --yield current node 
         coroutine.yield(current.value)
         if current.right then
             in_order(current.right)
