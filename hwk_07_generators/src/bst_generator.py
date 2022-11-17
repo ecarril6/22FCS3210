@@ -46,40 +46,26 @@ class BST:
     def __str__(self):
         return BST._print(self, "")
 
-    # helper method that builds a list with the elements of the BST in in-order order using recursion
-    def _in_order(node): 
-        nodes = []
-        if (node):
-            if (node.left):
-                nodes += BST._in_order(node.left)
-            nodes.append(node.label)
-            if (node.right):
-                nodes += BST._in_order(node.right)
-        return nodes
-    
-    # TODOd #1: return an iterator for BST; hint: use _in_order to build a list with the (node) elements; then return "self"
-    def __iter__(self):
-        return iter(self._in_order())
+    # TODO #1: return one element at a time from the BST's given node and respecting in-order tree traversal
+    # hint: do it recursively; the base-case is when node is None
+    def in_order(node): 
+        elements= []
+        if node.left: # visit left tereee first
+            elements += node.left.in_order()
 
-    # TODOd #2: return the label of the first element from the list that you built in __iter__, updating the list before returning; hint: don't worry if the list is empty (the exception that is going to be thrown is used to notify that there are no more elements to return)
-    def __next__(self) -> int:
-        if self.label >= len(self._in_order):
-            raise StopIteration
-        else: 
-            self.label += 1
-            return self._in_order[self.label -  1]
+        elements.append(node.label) # visit base element
+
+        if node.right: # visit right nodes
+            elements += node.right.in_order()
+
+
+        return elements
 
 # the code below builds and prints a tree using the given labels
 tree = BST(["b", "a", "d", "c", "e"])
 print("Tree:")
 print(tree)
 
-# TODOd #3: use the iterator that you created to show the labels of the elements of the tree
-#create iteratot 
-iterator = iter(tree)
-try: 
-    while True:
-        print(next(iterator), " ", end = '')
-except StopIteration:
-    print("All traversed")
 
+# TODO #2: use the generator that you created to show the labels of the elements of the tree
+print(tree.in_order())
